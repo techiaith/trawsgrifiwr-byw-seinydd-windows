@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "stt_console_app": {
+      "commandName": "Project",
+      "nativeDebugging": true
+    }
+  }
+}

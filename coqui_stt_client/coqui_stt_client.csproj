@@ -1,0 +1,51 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <PlatformTarget>x64</PlatformTarget>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="lib\libkenlm.so" />
+    <None Remove="lib\libstt.so" />
+    <None Remove="lib\STTClient.dll" />
+    <None Remove="models\techiaith_bangor_22.10.tflite" />
+    <None Remove="models\techiaith_bangor_transcription_22.10.scorer" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="lib\STTClient.dll" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="libkenlm.so">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="libstt.so">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="models\techiaith_bangor_22.10.tflite">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="models\techiaith_bangor_transcription_22.10.scorer">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="NAudio" Version="2.2.1" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+    <PackageReference Include="System.Management" Version="7.0.2" />
+    <PackageReference Include="WebRtcVadSharp" Version="1.3.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="STTClient">
+      <HintPath>lib\STTClient.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+</Project>
